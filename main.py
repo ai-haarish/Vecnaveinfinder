@@ -9,8 +9,8 @@ def get_eigen_veins(frame):
    #  gray scale conversionku
    grey = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
    blur = cv2.GaussianBlur(grey, (5,5),0).astype(np.float32)
-   dxx = cv2.Sobel(blur, cv2.CV_32F, 1,0, ksize=3)
-   dyy = cv2.Sobel(blur, cv2.CV_32F, 0,1, ksize=3)
+   dxx = cv2.Sobel(blur, cv2.CV_32F, 2,0, ksize=3)
+   dyy = cv2.Sobel(blur, cv2.CV_32F, 0,2, ksize=3)
    dxy = cv2.Sobel(blur, cv2.CV_32F, 0,1, ksize=3)    
    #enna peru vankarathu nu theriyeala 
    kd = dxx + dyy
